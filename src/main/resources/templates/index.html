@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title>Конвертер</title>
+    <link rel="stylesheet" href="/main.css" />
+    <link rel="stylesheet" href="/bootstrap.min.css" />
+
+</head>
+<body>
+    <!-- tag::logout[] -->
+    <div>
+        Вы залогинены, <span id="managername" th:text="${#authentication.name}">user</span>.
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Log Out"/>
+        </form>
+    </div>
+    <!-- end::logout[] -->
+
+    <div id="react"></div>
+
+
+    <script src="jquery-3.4.1.slim.min.js"></script> 
+    <script src="popper.min.js"></script>
+    <script src="bootstrap.min.js"></script> 
+    <script src="built/bundle.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+## default connection pool
+spring:
+  data.rest.base-path: /api
+  jpa:
+    database: POSTGRESQL
+    hibernate.ddl-auto: create
+  datasource:
+    hikari:
+      connectionTimeout: 20000
+      maximumPoolSize: 5
+    url: jdbc:postgresql://localhost:5433/currencies
+    username: postgres
+    password: 111111
