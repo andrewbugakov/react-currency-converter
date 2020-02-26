@@ -12,8 +12,7 @@
     <groupId>org.example</groupId>
     <artifactId>converter</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>securing-web</name>
-    <description>Demo project for Spring Boot</description>
+    <name>converter-example</name>
 
     <properties>
         <java.version>11</java.version>
