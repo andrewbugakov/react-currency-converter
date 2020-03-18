@@ -12,4 +12,9 @@ public interface CurrencyRepository extends CrudRepository<Currency, Long> {
             LocalDate dateOfRequest,
             String currencyId
     );
+
+    Currency findByDateOfRequestAndCharCode(
+            LocalDate dateOfRequest,
+            String currencyId
+    );
 }

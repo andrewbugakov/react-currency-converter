@@ -40,7 +40,6 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<>
 			<div className="container">
 				<p className="row">
 					<button className="btn btn-primary col" 
@@ -77,8 +76,6 @@ class App extends React.Component {
 					</div>
 				</div>
 			</div>
-			</>
-			
 		)
 	}
 }
@@ -173,7 +170,9 @@ class CurrencyHistory extends React.Component {
 		super(props);
 		this.state= {
 			fromCurrencyId: "RUB",
+			fromCurrencyCode:"RUB",
 			toCurrencyId: "RUB",
+            toCurrencyCode:"RUB",
 			incomingCount: 1,
 			currencies: this.props.currencies,
 			dateOfIssue: this.props.currentDate,
@@ -301,7 +300,7 @@ class CurrencySelect extends React.Component {
 			name={this.props.name}>
 			<option value="RUB">Российский рубль</option>
 			{this.props.currencies.map((currency, index) => 
-				<option key={currency.currencyId} value={currency.currencyId}>
+				<option key={currency.charCode} value={currency.charCode}>
 					{currency.name}
 				</option>
 				)}

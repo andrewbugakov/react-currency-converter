@@ -15,8 +15,8 @@ public class ConvertionService {
     }
 
     public double getHistoryOfCurrency(String fromCurrencyId, String toCurrencyId, LocalDate dateOfIssue) {
-        Currency fromCurrency = getByDateOfRequestAndCurrencyId(fromCurrencyId, dateOfIssue);
-        Currency toCurrency = getByDateOfRequestAndCurrencyId(toCurrencyId, dateOfIssue);
+        Currency fromCurrency = getByDateOfRequestAndCharCode(fromCurrencyId, dateOfIssue);
+        Currency toCurrency = getByDateOfRequestAndCharCode(toCurrencyId, dateOfIssue);
         return convert(fromCurrency, toCurrency, 1);
     }
 
@@ -26,15 +26,15 @@ public class ConvertionService {
             LocalDate dateOfIssue,
             Double incomingCount
     ) {
-        Currency fromCurrency = getByDateOfRequestAndCurrencyId(fromCurrencyId, dateOfIssue);
-        Currency toCurrency = getByDateOfRequestAndCurrencyId(toCurrencyId, dateOfIssue);
+        Currency fromCurrency = getByDateOfRequestAndCharCode(fromCurrencyId, dateOfIssue);
+        Currency toCurrency = getByDateOfRequestAndCharCode(toCurrencyId, dateOfIssue);
         return convert(fromCurrency, toCurrency, incomingCount);
     }
 
-    private Currency getByDateOfRequestAndCurrencyId(String fromCurrencyId, LocalDate dateOfIssue) {
-        return fromCurrencyId.equals("RUB") ?
+    private Currency getByDateOfRequestAndCharCode(String charCode, LocalDate dateOfIssue) {
+        return charCode.equals("RUB") ?
                 getRub():
-                currencyRepository.findByDateOfRequestAndCurrencyId(dateOfIssue, fromCurrencyId);
+                currencyRepository.findByDateOfRequestAndCharCode(dateOfIssue, charCode);
     }
 
     private Currency getRub() {
