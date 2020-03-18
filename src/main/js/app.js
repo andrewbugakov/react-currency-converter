@@ -247,12 +247,12 @@ class CurrencyHistory extends React.Component {
 								min="1996-09-01" max={this.props.currentDate}
 								onChange={(event)=>this.onChangeDate(event)}/>
 							<CurrencySelect 
-								currencies={this.state.currencies}
+								currencies={this.state.currencies.length==0?this.props.currencies:this.state.currencies}
 								onChange={(event)=>this.onChangeIncomingCurrency(event)}
 								className="custom-select col"
 								name="Из" />
 							<CurrencySelect 
-								currencies={this.state.currencies}
+								currencies={this.state.currencies.length==0?this.props.currencies:this.state.currencies}
 								onChange={(event)=>this.onChangeOutcomingCurrency(event)} 
 								className="custom-select col"
 								name="В" />
