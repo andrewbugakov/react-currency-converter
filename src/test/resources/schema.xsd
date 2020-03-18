@@ -1,0 +1,22 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="ValCurs">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Valute" maxOccurs="unbounded" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:short" name="NumCode"/>
+                            <xs:element type="xs:string" name="CharCode"/>
+                            <xs:element type="xs:short" name="Nominal"/>
+                            <xs:element type="xs:string" name="Name"/>
+                            <xs:element type="xs:string" name="Value"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="ID" use="optional"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="Date"/>
+            <xs:attribute type="xs:string" name="name"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
